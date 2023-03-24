@@ -6,14 +6,10 @@ import axios from './api/axios'
 import { createPinia } from 'pinia'
 import Swal from 'sweetalert2'
 
-
-
-// createApp(App).use(router).mount('#app')
-
 const app = createApp(App)
+window.axios = axios
 app.use(router);
 app.use(createPinia())
-app.config.globalProperties.$axios = axios
-app.config.globalProperties.$swal = Swal
+
 app.mount('#app')
 
