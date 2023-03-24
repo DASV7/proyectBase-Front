@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const ajax = axios.create({
-    baseURL: process.env.VUE_APP_HOST + process.env.VUE_APP_API_IP,
+    baseURL: import.meta.env.VUE_APP_HOST + import.meta.env.VUE_APP_API_IP,
     headers: {
         "Content-Type": "application/json",
         "jwt": localStorage.getItem("jwt") || null,
