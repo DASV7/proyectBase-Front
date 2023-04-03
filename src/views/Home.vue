@@ -2,6 +2,11 @@
 import axios from "../api/axios";
 import { ref } from "vue";
 
+const data = {
+  banner: "link imagen ",
+  logo
+};
+
 const sendDataToback = async (event) => {
   event.preventDefault();
   const form = document.getElementById("information");
@@ -16,6 +21,7 @@ const sendDataToback = async (event) => {
 </script>
 
 <template>
+  <img :src="data.banner" alt="" srcset="">
   <div class="homeComponent">
     <form id="information">
       <input type="text" name="surname" />

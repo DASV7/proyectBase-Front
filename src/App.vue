@@ -4,7 +4,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <div class="mainApp"></div>
-  <router-view></router-view>
+  <router-view></router-view>    
 </template>
 
 <style lang="scss">
