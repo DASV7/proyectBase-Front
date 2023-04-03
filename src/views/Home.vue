@@ -11,11 +11,7 @@ const sendDataToback = async (event) => {
     datos[clave] = valor;
   }
 
-  const data = await axios.post(
-    "http://localhost:3001/api/v1/usersmodule",
-    datos || {}
-  );
-  console.log(data.data);
+  const data = await axios.post("/usersmodule", datos || {});
 };
 </script>
 

@@ -1,7 +1,6 @@
 import axios from "axios";
-
-const ajax = axios.create({
-    baseURL: import.meta.env.VUE_APP_HOST + import.meta.env.VUE_APP_API_IP,
+const axiosInstance = axios.create({
+    baseURL: import.meta.env.VITE_HOST + import.meta.env.VITE_PREFIX,
     headers: {
         "Content-Type": "application/json",
         "jwt": localStorage.getItem("jwt") || null,
@@ -9,7 +8,7 @@ const ajax = axios.create({
     },
 });
 
-ajax.interceptors.request.use(
+axiosInstance.interceptors.request.use(
     config => {
         let token = localStorage.getItem("jwt") || null;
 
@@ -24,4 +23,4 @@ ajax.interceptors.request.use(
     }
 );
 
-export default ajax;
+export default axiosInstance;
