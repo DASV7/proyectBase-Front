@@ -100,18 +100,16 @@ function changeMenu(e) {
   color: #fff;
   font-family: monospace;
 }
-body {
-  background-color: #222121;
-}
 
 .login {
   @include Column();
   width: 100%;
   height: 100vh;
+  background-color: #222121;
 
   &__formLogin {
     width: 70%;
-    gap: 5px;
+    gap: 20px;
     @include Column();
 
     &-register {
