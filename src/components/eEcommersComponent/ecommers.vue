@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="container-btn">
-              <button @click="sumaComp()" class="btn-carrito">
+              <button @click="addValue()" class="btn-carrito">
                 Añadir al carrito
               </button>
               <!-- <div @click="changeView(), $router.push('/carritoDeCompras')"></div> -->
@@ -81,6 +81,17 @@
 
 <script setup>
 import { ref } from "vue";
+import { useCounterStore } from "../../store/e-commerce";
+
+const counterStore = useCounterStore();
+
+const addValue = (e) => {
+  counterStore.increment();
+};
+
+setTimeout(() => {
+  console.log(counterStore.count);
+}, 5000);
 
 function changeView() {}
 function changeImg(index) {
@@ -127,6 +138,7 @@ function changeImg(index) {
   padding: 20px 20px 30px 20px;
   /* outline: solid 1px #000; */
   border-radius: 20px;
+  /* border: solid 4px #d1d0d0; */
 }
 .ecommers__btn-back {
   background-color: #6c757d;

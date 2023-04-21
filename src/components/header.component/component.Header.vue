@@ -1,6 +1,15 @@
 <script setup>
+import { ref } from "vue";
+import { useCounterStore } from "../../store/e-commerce";
+
+const counterStore = useCounterStore();
+
 function changeView() {}
-function openCar() {}
+const show = ref(false);
+
+function openCar() {
+  show.value = !show.value;
+}
 </script>
 <template>
   <header class="header-">
@@ -21,11 +30,29 @@ function openCar() {}
         />
       </div>
       <div class="carrito">
-        <button @click="openCar()" class="carrito__btn">Car {{ suma }} </button>
-        <!-- <div class="dropDown">
-      </div> -->
+        <button @click="openCar(true)" class="carrito__btn">
+          Car {{ counterStore.count }}
+        </button>
+        <div
+          class="dropDown slide-top"
+          v-if="show"
+          @mouseleave="openCar(false)"
+        >
+          <div class="dropDown__btn">
+            <p class="dropDown__btn-txt">CARRITO DE COMPRAS</p>
+            <button class="dropDown__btn-vaciar">Vaciar</button>
+          </div>
+          <div class="dropDown__items"></div>
+          <div class="dropDown__items-view">
+            <button
+              @click="changeView(), $router.push('/carritoDeCompras')"
+              class="dropDown__items-btn"
+            >
+              Ver Carrito ->
+            </button>
+          </div>
+        </div>
       </div>
-     
     </div>
   </header>
 </template>
@@ -95,12 +122,84 @@ function openCar() {}
   border: 5px solid #767575;
 }
 .dropDown {
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 45px;
-  width: 200px;
-  height: 400px;
+  top: 75px;
+  width: 240px;
+  height: 150px;
+  background-color: #fff;
+  padding: 5px;
+}
+.dropDown__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+}
+.dropDown__btn-txt {
+  color: #000;
+  font-size: 12px;
+}
+.dropDown__btn-vaciar {
+  background-color: #fff;
+  border: none;
+  color: #000;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #eae4e4;
+  cursor: pointer;
+}
+.dropDown__items {
+  width: 100%;
+  height: 100%;
   background-color: #000;
 }
+.dropDown__items-view {
+  width: 100%;
+  height: 100%;
+}
+.dropDown__items-btn {
+  width: 100%;
+  height: 100%;
+  color: #4375f1;
+  cursor: pointer;
+  border: none;
+  font-weight: 500;
+  background-color: #fff;
+}
+.dropDown__items-btn:hover {
+  background-color: #f7f7f7;
+}
+.slide-top {
+  -webkit-animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
 @media (max-width: 600px) {
   .header__logo- {
     width: 55px;

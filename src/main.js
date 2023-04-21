@@ -7,11 +7,11 @@ import { createPinia } from 'pinia'
 // import Swal from 'sweetalert2'
 
 
-
 const app = createApp(App)
+const pinia = createPinia()   
 window.axios = axios
 app.use(router);
-app.use(createPinia())
+app.use(pinia)
 
 app.mount('#app')
 
