@@ -1,19 +1,17 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style.scss'
 import router from "./routes/index"
 import App from './App.vue'
 import axios from './api/axios'
 import { createPinia } from 'pinia'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
-
-
-// createApp(App).use(router).mount('#app')
 
 const app = createApp(App)
+const pinia = createPinia()   
+window.axios = axios
 app.use(router);
-app.use(createPinia())
-app.config.globalProperties.$axios = axios
-app.config.globalProperties.$swal = Swal
+app.use(pinia)
+
 app.mount('#app')
 
