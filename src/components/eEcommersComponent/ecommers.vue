@@ -125,8 +125,10 @@ function changeImg(index) {
   position: absolute;
   top: 50px;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin-top: 20px;
+  overflow: hidden;
+
 }
 .ecommers {
   /* display: flex;
@@ -139,6 +141,7 @@ function changeImg(index) {
   /* outline: solid 1px #000; */
   border-radius: 20px;
   /* border: solid 4px #d1d0d0; */
+  margin-bottom: 30px;
 }
 .ecommers__btn-back {
   background-color: #6c757d;

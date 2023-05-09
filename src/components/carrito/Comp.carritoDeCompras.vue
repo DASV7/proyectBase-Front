@@ -10,7 +10,13 @@
         </div>
         <div class="shoppingCart__product-item"></div>
       </div>
-      <div class="data"></div>
+      <div class="data">
+        <div class="data__select"><select name="city" id="ciudad">
+          <option value="Medellin">Medellin</option>
+          <option value="Bogota">Bogota</option>
+          <option value="Cali">Cali</option>
+        </select> </div>
+      </div>
     </div>
   </div>
 </template>

@@ -97,7 +97,7 @@ function changeMenu(e) {
 * {
   padding: 0%;
   margin: 0%;
-  color: #fff;
+  // color: #fff;
   font-family: monospace;
 }
 

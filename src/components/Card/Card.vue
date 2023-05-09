@@ -30,7 +30,7 @@ function changeView(show) {
       </div>
       <img
         class="card__product-img"
-        src="src\img\zapatos.jpg"
+        :src="props.information.pictures[0]"
         @click="changeView(), $router.push('/ecommers')"
         @mouseover="changeView(true)"
       />
@@ -39,12 +39,12 @@ function changeView(show) {
       <span
         @click="changeView(), $router.push('/ecommers')"
         class="card__info-value"
-        >Jordan</span
+        >{{ props.information.name }}</span
       >
     </div>
     <div class="card__price">
       <div class="card__container">
-        <span class="card__price-value">$999.999</span>
+        <span class="card__price-value">${{ props.information.price }}</span>
       </div>
     </div>
   </div>
