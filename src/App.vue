@@ -1,14 +1,14 @@
 <script setup>
 import { computed, ref,watchEffect } from "vue";
 import { useRoute } from "vue-router";
-import headerComp from "./components/header.component/component.Header.vue";
+// import headerComp from "./components/header.component/component.Header.vue";
 
-const route = useRoute();
-const fullPath = ref(route.fullPath);
+// const route = useRoute();
+// const fullPath = ref(route.fullPath);
 
-watchEffect(() => {
-  fullPath.value = route.fullPath;
-});
+// watchEffect(() => {
+//   fullPath.value = route.fullPath;
+// });
 
 </script>
 

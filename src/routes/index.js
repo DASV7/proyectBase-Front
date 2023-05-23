@@ -4,17 +4,17 @@ import Login from "../components/login/Login.vue";
 import menuPrincipal from "../views/menuPrincipal.vue";
 import Ecommers from '../components/eEcommersComponent/ecommers.vue'
 import carritoDeCompras from '../components/carrito/Comp.carritoDeCompras.vue'
-
+import prueba from '../views/Prueba.vue'
 const routes = [
   {
     path: "/",
-    name: "Login",
-    component: Login,
+    name: "prueba",
+    component: prueba,
   },
   {
-    path: "/home",
-    name: "Home",
-    component: Home,
+    path: "/login",
+    name: "login",
+    component: Login,
   },
   {
     path: "/menuPrincipal",

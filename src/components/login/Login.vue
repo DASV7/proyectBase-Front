@@ -50,7 +50,7 @@ function changeMenu(e) {
           name="email"
         />
         <input
-          class="login__formItem-input"
+          class="login__formItem-input"             
           type="password"
           placeholder="Password"
           name="password"
@@ -144,13 +144,14 @@ function changeMenu(e) {
     border-radius: 20px;
 
     &-button {
-      width: 85%;
+      width: 80%;
       height: 35px;
       background-color: #3e3d3d;
       border: none;
       cursor: pointer;
       outline: none;
       border-radius: 30px;
+      color: #fff;
       &::placeholder {
         color: #fff;
       }
@@ -173,6 +174,7 @@ function changeMenu(e) {
       border-radius: 20px;
       background-color: #5e5b5b;
       color: #fff;
+      cursor: pointer;
       &::placeholder {
         color: #ffffffa9;
       }
